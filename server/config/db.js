@@ -16,11 +16,32 @@ async function connectDatabase() {
     return cached.conn;
   }
 
+  if (!MONGO_URI) {
+    const err = new Error("MONGO_URI is not set in environment variables");
+    console.error(err.message);
+    throw err;
+  }
+
   if (!cached.promise) {
-    cached.promise = mongoose.connect(MONGO_URI).then((mongoose) => {
-      console.log("Connected to MongoDB");
-      return mongoose;
-    });
+    const connectOptions = {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      serverSelectionTimeoutMS: 20000,
+      socketTimeoutMS: 45000,
+    };
+
+    cached.promise = mongoose
+      .connect(MONGO_URI, connectOptions)
+      .then((mongooseInstance) => {
+        console.log("Connected to MongoDB");
+        return mongooseInstance;
+      })
+      .catch((err) => {
+        // Reset the cached promise so subsequent attempts can retry
+        cached.promise = null;
+        console.error("MongoDB connection error:", err.message || err);
+        throw err;
+      });
   }
 
   cached.conn = await cached.promise;

@@ -34,3 +34,5 @@ Thumbs.db
 .vscode
 server/.env
 .vscode/
+.mcp.json
+mcp.json
