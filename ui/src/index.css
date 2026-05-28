@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400,1,0&display=swap');
+@import "tailwindcss";
+
+:root {
+  color-scheme: light;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  --background: #f7f9fb;
+  --surface: #f7f9fb;
+  --surface-dim: #d8dadc;
+  --surface-bright: #f7f9fb;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #f2f4f6;
+  --surface-container: #eceef0;
+  --surface-container-high: #e6e8ea;
+  --surface-container-highest: #e0e3e5;
+  --on-surface: #191c1e;
+  --on-surface-variant: #444654;
+  --outline: #747685;
+  --outline-variant: #c4c5d6;
+  --surface-variant: #e0e3e5;
+  --primary: #2c50cd;
+  --on-primary: #ffffff;
+  --primary-container: #496ae8;
+  --on-primary-container: #fffbff;
+  --secondary: #3e6658;
+  --on-secondary: #ffffff;
+  --secondary-container: #c0ecda;
+  --on-secondary-container: #446c5e;
+  --tertiary: #4d5d73;
+  --on-tertiary: #ffffff;
+  --tertiary-container: #66768d;
+  --on-tertiary-container: #fdfcff;
+  --error: #ba1a1a;
+  --on-error: #ffffff;
+  --error-container: #ffdad6;
+  --on-error-container: #93000a;
+  --primary-fixed: #dde1ff;
+  --on-primary-fixed: #001453;
+  --background: #f7f9fb;
+}
+
+html {
+  background: var(--background);
+  color: var(--on-surface);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  max-width: 100%;
+  overflow-x: hidden;
+  background: var(--background);
+  color: var(--on-surface);
+}
+
+#root {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-variation-settings: 'FILL' 1;
+  font-feature-settings: 'liga' 1;
+  font-weight: 400;
+  speak: none;
+}
+
+.bg-surface { background: var(--surface); }
+.bg-surface-dim { background: var(--surface-dim); }
+.bg-surface-bright { background: var(--surface-bright); }
+.bg-surface-container-lowest { background: var(--surface-container-lowest); }
+.bg-surface-container-low { background: var(--surface-container-low); }
+.bg-surface-container { background: var(--surface-container); }
+.bg-surface-container-high { background: var(--surface-container-high); }
+.bg-surface-container-highest { background: var(--surface-container-highest); }
+.bg-surface-variant { background: var(--surface-variant); }
+.border-surface-variant { border-color: var(--surface-variant); }
+.text-on-surface { color: var(--on-surface); }
+.text-on-surface-variant { color: var(--on-surface-variant); }
+.text-primary { color: var(--primary); }
+.bg-primary { background: var(--primary); }
+.bg-primary-container { background: var(--primary-container); }
+.text-on-primary-container { color: var(--on-primary-container); }
+.text-on-primary { color: var(--on-primary); }
+.bg-outline-variant { background: var(--outline-variant); }
+.bg-primary-fixed { background: var(--primary-fixed); }
+.text-on-primary-fixed { color: var(--on-primary-fixed); }
+.bg-secondary-container { background: var(--secondary-container); }
+.text-on-secondary-container { color: var(--on-secondary-container); }
+.bg-tertiary-container { background: var(--tertiary-container); }
+.text-on-tertiary-container { color: var(--on-tertiary-container); }
+.bg-error { background: var(--error); }
+.bg-error-container { background: var(--error-container); }
+.text-on-error { color: var(--on-error); }
+.text-on-error-container { color: var(--on-error-container); }
+.text-error { color: var(--error); }
+.border-outline-variant { border-color: var(--outline-variant); }
+.bg-surface-container-low { background: var(--surface-container-low); }
+.hover\:bg-primary-container:hover { background: var(--primary-container); }
+
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+.p-base { padding: 8px; }
+.p-gutter { padding: 24px; }
+.p-container-padding-mobile { padding-left: 20px; padding-right: 20px; }
+.p-container-padding-desktop { padding-left: 40px; padding-right: 40px; }
+.mb-gutter { margin-bottom: 24px; }
+.gap-gutter { gap: 24px; }
+.gap-card-gap { gap: 16px; }
+.flex-col.gap-card-gap,
+.flex.gap-card-gap { gap: 16px; }
+.card-gap { gap: 16px; }
+.border-outline-variant { border-color: var(--outline-variant); }
+.rounded-card { border-radius: 1.5rem; }
+.rounded-pill { border-radius: 9999px; }
+
+.font-headline-lg-mobile { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1.75rem; line-height: 2.25rem; }
+.text-headline-lg-mobile { font-size: 1.75rem; line-height: 2.25rem; }
+.font-headline-lg { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 2rem; line-height: 2.5rem; }
+.text-headline-lg { font-size: 2rem; line-height: 2.5rem; }
+.font-title-md { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; font-size: 1.25rem; line-height: 1.4; }
+.text-title-md { font-size: 1.25rem; line-height: 1.4; }
+.font-body-lg { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 400; font-size: 1.125rem; line-height: 1.55rem; }
+.text-body-lg { font-size: 1.125rem; line-height: 1.55rem; }
+.font-body-md { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 400; font-size: 1rem; line-height: 1.5rem; }
+.text-body-md { font-size: 1rem; line-height: 1.5rem; }
+.font-body-sm { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 400; font-size: 0.875rem; line-height: 1.25rem; }
+.text-body-sm { font-size: 0.875rem; line-height: 1.25rem; }
+.font-label-sm { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; font-size: 0.8125rem; line-height: 1rem; letter-spacing: 0.05em; text-transform: uppercase; }
+.text-label-sm { font-size: 0.8125rem; line-height: 1rem; }
