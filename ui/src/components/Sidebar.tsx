@@ -31,11 +31,11 @@ export default function Sidebar({
       />
 
       <aside
-        className={`fixed inset-y-0 left-0 z-50 flex h-screen w-[min(85vw,280px)] shrink-0 flex-col gap-gutter overflow-x-hidden overflow-y-auto border-r border-surface-variant bg-surface-container-low p-base transition-transform duration-300 ease-out md:sticky md:top-0 md:z-auto md:flex md:h-screen md:w-64 md:translate-x-0 ${
+        className={`fixed inset-y-0 left-0 z-50 flex h-dvh max-h-dvh w-[min(85vw,280px)] shrink-0 flex-col overflow-hidden border-r border-surface-variant bg-surface-container-low p-base transition-transform duration-300 ease-out md:sticky md:top-0 md:z-auto md:flex md:h-screen md:max-h-none md:w-64 md:translate-x-0 ${
           mobileOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'
         }`}
       >
-        <div className="flex items-center gap-3 px-1 py-2">
+        <div className="flex shrink-0 items-center gap-3 px-1 py-2">
           <button
             type="button"
             onClick={onSwitchGroup}
@@ -63,7 +63,7 @@ export default function Sidebar({
           </button>
         </div>
 
-        <nav className="flex flex-1 flex-col gap-1 overflow-y-auto">
+        <nav className="flex min-h-0 flex-1 flex-col gap-1 overflow-y-auto overscroll-contain">
           <button
             type="button"
             onClick={() => onNavigate('dashboard')}
@@ -100,24 +100,24 @@ export default function Sidebar({
           </button>
         </nav>
 
-        <button
-          type="button"
-          onClick={() => {
-            onAddTask()
-            onClose()
-          }}
-          className="flex w-full items-center justify-center gap-2 rounded-xl bg-primary py-3 font-label-sm text-label-sm text-on-primary shadow-sm transition-colors hover:bg-primary-container hover:text-on-primary-container"
-        >
-          <span
-            className="material-symbols-outlined"
-            style={{ fontSize: '18px' }}
+        <div className="flex shrink-0 flex-col gap-3 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
+          <button
+            type="button"
+            onClick={() => {
+              onAddTask()
+              onClose()
+            }}
+            className="flex w-full items-center justify-center gap-2 rounded-xl bg-primary py-3 font-label-sm text-label-sm text-on-primary shadow-sm transition-colors hover:bg-primary-container hover:text-on-primary-container"
           >
-            add
-          </span>
-          Add New Task
-        </button>
+            <span
+              className="material-symbols-outlined"
+              style={{ fontSize: '18px' }}
+            >
+              add
+            </span>
+            Add New Task
+          </button>
 
-        <div className="mt-auto flex flex-col gap-1 pb-4">
           <button
             type="button"
             onClick={() => {
