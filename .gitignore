@@ -8,6 +8,8 @@ node_modules/
 package-lock.json
 yarn.lock
 
+.server\node_modules
+.ui\node_modules
 # Build outputs
 dist/
 build/

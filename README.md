@@ -45,6 +45,20 @@ A shared flat task tracker with a Vite + React frontend and Node + Express backe
 
 ## Notes
 
-- The frontend uses `http://localhost:4000/api/tasks` by default.
-- Add `VITE_API_URL` in `ui/.env` if you want a different backend host.
+- The frontend uses `http://localhost:4000` by default (`VITE_API_URL` in `ui/.env`).
 - The backend uses MongoDB and expects `MONGO_URI` in `server/.env`.
+- Run MongoDB locally (or use Atlas) before `npm run dev` in `server`.
+
+### Deploying on Vercel
+
+**UI (`ui` project)**
+
+1. Set **Root Directory** to `ui`.
+2. Add env var `VITE_API_URL` = your public API URL (not `localhost`).
+3. `ui/vercel.json` rewrites all routes to `index.html` so refresh on `/groups/...` works.
+
+**API (`server` project)**
+
+1. Set **Root Directory** to `server`.
+2. Add `MONGO_URI`, `JWT_SECRET`, and other vars from `server/.env.example`.
+3. Use a hosted MongoDB (e.g. Atlas); `127.0.0.1` will not work on Vercel.
